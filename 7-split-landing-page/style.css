@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+:root {
+    --left-bg-color: rgba(245, 59, 223, 0.59);
+    --right-bg-color: rgba(177, 59, 245, 0.59);
+    --left-btn-hover-color: rgba(245, 59, 223, 1);
+    --right-btn-hover-color: rgba(177, 59, 245, 1);
+    --hover-width: 75%;
+    --other-width: 25%;
+    --speed: 1000ms;
+  }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333; 
+}
+
+.split{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left{
+    left: 0;
+    background: no-repeat center/cover
+    url(img/messi.jpg);
+}
+
+.split.left::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg-color);
+}
+
+.split.right{
+    right: 0;
+    background: no-repeat center/cover
+    url(img/ronaldo.jpg);
+}
+
+.split.right::before{
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg-color);
+}
+
+h1{
+    font-size: 3rem;
+    color: #ffffff;
+    position: absolute;
+    top: 30%;
+    /*
+     left: 50%; ve transform: translateX(-50%); birlikte kullanılır. Önce left: 50%; ile öğe yatayda ortalanır, ardından transform: translateX(-50%); ile kendi genişliğinin yüzde 50'si kadar sola kaydırılarak tam merkeze hizalanır.
+    */
+    left: 50%;
+    transform: translateX(-50%);
+    text-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+    /*yazının aşağı satıra inmesini engellemek */
+    white-space: nowrap;
+}
+
+.btn{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 55%;
+    text-decoration: none;
+    color: #ffffff;
+    border: solid 3px #ffffff;
+    background-color: transparent;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 0.8rem;
+    width: 12rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 1);
+    text-transform: uppercase;
+}
+
+.split.left .btn:hover{
+    background-color: var(--left-btn-hover-color);
+    border-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+.split.right .btn:hover{
+    background-color: var(--right-btn-hover-color);
+    border-color: transparent;
+    transition: 0.3s ease-in-out;
+}
+
+/* hover-left*/
+.hover-left .left{
+    width: var(--hover-width);
+
+}
+
+.hover-left .right{
+    width: var(--other-width);
+}
+
+/* hover-right */
+.hover-right .right{
+    width: var(--hover-width);
+}
+
+.hover-right .left{
+    width: var(--other-width);
+}
+
+.split.right, .split.right::before, .split.left, .split.left::before{
+    transition: all var(--speed) ease-in-out;
+}
+
+@media(max-width:980px){
+    h1{
+        font-size: 1.7rem;
+        top: 30%;
+    }
+    .btn{
+        padding: 1.2rem;
+        width: 10rem;
+        font-size: 1.2rem;
+    }
+}
+
+@media(max-width:555px){
+    h1{
+        font-size: 1.1rem;
+        top: 30%;
+    }
+    .btn{
+        padding: 1rem;
+        width: 7rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+    }
+}
+
+
+
+
+
