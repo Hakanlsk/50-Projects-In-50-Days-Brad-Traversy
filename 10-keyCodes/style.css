@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+/* font-family: 'Poppins', sans-serif; */
+
+*{
+    box-sizing: border-box; 
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background-color: #e9edc9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    text-align: center;
+    margin: 0;
+}
+
+.key{
+    border: 2px solid #a5a58d;
+    background-color: #fff;
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    display: inline-flex;       /*yatayda hizalamak*/
+    align-items: center;
+    font-size: 20px;
+    flex-direction: column;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 10px;
+    min-width: 150px;
+    position: relative;
+}
+
+.key small{
+    position: absolute;
+    top: -24px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #283618;
+}
+
